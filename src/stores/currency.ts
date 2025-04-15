@@ -4,7 +4,10 @@ import { LIST_DEFAULT_CURRENCY } from '@/constants/currency';
 import type { ISelectOption } from '@/components/ui/selects/ui-select/types';
 import { loadListCurrency } from '@/services/currency';
 import { STORAGE_CURRENCY_KEY } from '@/constants/app';
-import type { IRequestParamsCurrencyLatest, TCurrencyRates } from '@/types/currency';
+import type {
+  IRequestParamsCurrencyLatest,
+  TCurrencyRates,
+} from '@/types/currency';
 
 export const useCurrencyStore = defineStore('currency', () => {
   const baseCurrency = ref(LIST_DEFAULT_CURRENCY[0]);
@@ -15,7 +18,9 @@ export const useCurrencyStore = defineStore('currency', () => {
     baseRate.value = await getBaseCurrencyRate(currency);
   }
 
-  async function getBaseCurrencyRate(currency: ISelectOption): Promise<TCurrencyRates | null> {
+  async function getBaseCurrencyRate(
+    currency: ISelectOption
+  ): Promise<TCurrencyRates | null> {
     const storageKey = `${STORAGE_CURRENCY_KEY}-${currency.name.toLocaleLowerCase()}`;
     const storageData = localStorage.getItem(storageKey);
 
@@ -37,7 +42,6 @@ export const useCurrencyStore = defineStore('currency', () => {
       };
       const response = await loadListCurrency(reqParams);
       const currentTimeInMs = Date.now();
-      console.log('response', response);
       const storageData = {
         data: response.data.data,
         time: currentTimeInMs,
