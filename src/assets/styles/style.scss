@@ -1,0 +1,27 @@
+@import url(./normalize.scss);
+@import url(./fonts.scss);
+@import url(./transitions.scss);
+
+html,
+body,
+#app {
+  background-color: rgb(35, 36, 61);
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #FFF;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 540px) {
+    padding: 0 10px;
+  }
+}
+
