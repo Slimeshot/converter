@@ -1,5 +1,8 @@
 import { globalIgnores } from 'eslint/config';
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript';
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from '@vue/eslint-config-typescript';
 import pluginVue from 'eslint-plugin-vue';
 import prettier from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
@@ -17,11 +20,22 @@ export default defineConfigWithVueTs(
     },
     rules: {
       // Общие правила для всех файлов
-      'prettier/prettier': ['error', { singleQuote: true, semi: false, trailingComma: 'es5' }],
+      'prettier/prettier': [
+        'error',
+        {
+          singleQuote: true,
+          semi: false,
+          trailingComma: 'es5',
+          printWidth: 120,
+        },
+      ],
 
       // Общие правила JavaScript/TypeScript
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
       eqeqeq: ['error', 'always'],
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       curly: ['error', 'all'],
@@ -31,7 +45,7 @@ export default defineConfigWithVueTs(
       'vue/attribute-hyphenation': ['error', 'always'],
       'vue/html-indent': ['error', 2],
       'vue/max-attributes-per-line': ['error', { singleline: 3, multiline: 1 }],
-      'vue/multi-word-component-names': 'off', // Отключаем правило для многословных имён компонентов
+      'vue/multi-word-component-names': 'off',
       'vue/order-in-components': [
         'error',
         {
@@ -73,7 +87,10 @@ export default defineConfigWithVueTs(
     name: 'typescript/semi',
     files: ['**/*.{ts,tsx}'],
     rules: {
-      'prettier/prettier': ['error', { singleQuote: true, semi: true, trailingComma: 'es5' }],
+      'prettier/prettier': [
+        'error',
+        { singleQuote: true, semi: true, trailingComma: 'es5' },
+      ],
       semi: ['error', 'always'],
       '@typescript-eslint/semi': ['error', 'always'],
     },

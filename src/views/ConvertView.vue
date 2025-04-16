@@ -49,8 +49,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-import { onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import AnimatedNumber from '@/components/AnimatedNumber.vue'
 import UiSelect from '@/components/ui/selects/ui-select/index.vue'
 import UiInput from '@/components/ui/inputs/ui-input/index.vue'

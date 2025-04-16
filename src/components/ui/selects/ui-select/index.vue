@@ -3,12 +3,7 @@
     <div class="ui-select__box" :class="boxClasses" @click="toggleDropdown">
       <span class="ui-select__selected" v-text="modelValue?.name" />
 
-      <span
-        v-if="hidePlaceholder && !modelValue"
-        class="ui-select__label"
-        :class="labelClasses"
-        v-text="selectLabel"
-      />
+      <span v-if="hidePlaceholder && !modelValue" class="ui-select__label" :class="labelClasses" v-text="selectLabel" />
     </div>
 
     <transition name="fade-up">
@@ -47,7 +42,8 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    required: true,
+    required: false,
+    defaul: '',
   },
   label: {
     type: String,

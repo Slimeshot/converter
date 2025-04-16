@@ -7,12 +7,7 @@
         <RouterLink :to="LIST_ROUTES_APP.PAGE_HOME" class="header__link"> Home </RouterLink>
         <RouterLink :to="LIST_ROUTES_APP.PAGE_CONVERT" class="header__link"> Convert </RouterLink>
       </nav>
-      <ui-select
-        :options="LIST_DEFAULT_CURRENCY"
-        placeholder="Валюта"
-        hide-placeholder
-        v-model="baseCurrency"
-      />
+      <ui-select :options="LIST_DEFAULT_CURRENCY" placeholder="Валюта" hide-placeholder v-model="baseCurrency" />
     </div>
   </header>
 </template>

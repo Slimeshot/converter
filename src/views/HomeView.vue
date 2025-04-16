@@ -2,11 +2,7 @@
   <div class="home">
     <h1 class="home__title">Текущие курсы валют</h1>
     <template v-if="isLoaded">
-      <div
-        v-for="currency in listBaseRate"
-        :key="currency.code"
-        class="home__currency"
-      >
+      <div v-for="currency in listBaseRate" :key="currency.code" class="home__currency">
         <span>за 1 {{ currency.code }} = </span>
         <AnimatedNumber :to="1 / currency.value" />
         <span>&nbsp;{{ currencyStore.baseCurrency.name }}</span>
